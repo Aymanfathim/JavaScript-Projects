@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let marks = []; 
+let totalMarks = 0; 
+
+for (let i = 0; i < 5; i++) {
+    let mark;
+    
+    do {
+        mark = parseInt(prompt(`Enter marks for Subject ${i + 1} (out of 100):`));
+    } while (isNaN(mark) || mark < 0 || mark > 100);
+
+    marks.push(mark); 
+    totalMarks += mark; 
+}
+
+
+let grade = "";
+
+if (totalMarks >= 450) {
+    grade = "A+";
+} else if (totalMarks >= 400) {
+    grade = "A";
+} else if (totalMarks >= 350) {
+    grade = "B";
+} else if (totalMarks >= 300) {
+    grade = "C";
+} else if (totalMarks >= 250) {
+    grade = "D";
+} else {
+    grade = "F";
+}
+
+
+alert("Total Marks: " + totalMarks + " / 500\nGrade: " + grade);
+console.log("Total Marks: " + totalMarks + " / 500");
+console.log("Grade: " + grade);
+
+    </script>
+</body>
+</html>
