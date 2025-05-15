@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palindrome Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Palindrome Checker</h1>
+
+  <input type="text" id="inputText" placeholder="Enter a word or sentence" />
+  <button onclick="checkPalindrome()">Check</button>
+
+  <div id="result"></div>
+
+  <script>
+    function checkPalindrome() {
+      const input = document.getElementById("inputText").value;
+
+      // Remove spaces and convert to lowercase
+      const cleaned = input.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+      // Reverse the cleaned input
+      const reversed = cleaned.split('').reverse().join('');
+
+      // Check if palindrome
+      if (cleaned === reversed && cleaned !== "") {
+        document.getElementById("result").textContent = `"${input}" is a palindrome ✅`;
+      } else {
+        document.getElementById("result").textContent = `"${input}" is not a palindrome ❌`;
+      }
+    }
+  </script>
+
+</body>
+</html>
